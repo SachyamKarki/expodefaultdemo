@@ -1,24 +1,21 @@
-import {Text, View, StyleSheet} from 'react-native';
 
-export default function AboutScreen(){
-    return(
-        <><View style={styles.container}>
-            <Text style={styles.text}> About screen
-        </Text>
-        </View>
-        </>
-        
-    );
+import { useState } from 'react';
+import { Button, Text, View } from 'react-native';
 
-}
 
-const styles=StyleSheet.create({
-  container:{
-    flex:1,
 
-  },
-  text:{
-    
-  }
-})
+const Trial=()=>{
 
+  const[ number,setNumber] =useState(["0","1","2"] );
+
+const addOneFriend=()=>setNumber([...number, "4","5",'6']);
+
+return(
+    <View>
+      <Text>{number}</Text>
+        <Button onPress={addOneFriend} title="hitme Babe"/>    
+    </View>
+);
+};
+
+export default Trial;
